@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Baloo 2", sans-serif;
+}
+:root{
+    --bg-clr: #0b132b;
+    --heading-color: #6FFFE9;
+    --O-clr: #6FFFE9;
+    --X-clr: #6FFFE9;
+    --lines-clr: #3A506B;
+}
+body{
+    background-color: var(--bg-clr);
+    text-align: center;
+    color: var(--heading-color);
+    
+}
+.container{
+    height: 70vh;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    /* gap: 1.5vmin; */
+}
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem #3A506B;
+    font-size: 2.5rem;/*earlier 8 vmin*/
+    font-weight: bold;
+    transition: all 0.2s ease, all 0.2s ease ;
+    background-color: var(--lines-clr);
+    color: var(--O-clr);
+}
+.box:disabled{
+    cursor: not-allowed;
+}
+.box:not(:empty){
+    animation: pop 0.2s ease;
+}
+.box:not(:disabled):hover{
+    background-color: #1e2a44;
+    box-shadow: 0px 0px 10px #6fffe9;
+    cursor: pointer;
+}
+@keyframes pop {
+    0%{
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+#reset-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: var(--heading-color);
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 20px var(--lines-clr);
+    transition: all 0.2s ease 0s; 
+}
+#reset-btn:hover, #new-btn:hover{
+/* animation: pop 0.2s ease; */
+transform: scale(1.2);
+background-color: #0b132b;
+color: #6FFFE9;
+}
+#new-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: var(--heading-color);
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 20px var(--lines-clr);
+    transition: all 0.2s ease 0s;
+}
+#msg{
+    color: var(--X-clr);
+    font-size: 5vmin;
+}
+.msg-container{
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+.hide{
+    display: none;
+}
